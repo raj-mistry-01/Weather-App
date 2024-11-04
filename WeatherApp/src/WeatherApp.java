@@ -28,7 +28,7 @@ public class WeatherApp {
 
         //
 
-        String urlString  =  "latitude and longitude api open meteo.com";
+        String urlString  =  "Api1";
 
         try {
 //            System.out.println("yes I am called");
@@ -91,8 +91,7 @@ public class WeatherApp {
     }
     public   static  JSONArray getLocationData(String locationName) {
 
-        String urlString1 = "locationIq Api for city search";
-        // String uelString optional ==> open meteo gecoding locationData api // use above for city
+        final String urlString1 = "Api2";
         locationName = locationName.replaceAll(" ","+");
         try {
             System.out.println("fetching new things ");
@@ -109,8 +108,6 @@ public class WeatherApp {
                 input.close();
                 conn.disconnect();
                 JSONParser parser = new JSONParser();
-//                JSONObject resJsonObj = (JSONObject) parser.parse(String.valueOf(resJson));
-//                JSONArray locationData = (JSONArray) resJsonObj.get("results");
                 JSONArray locationData = (JSONArray) parser.parse(resJson.toString());
                  return locationData;
             }
